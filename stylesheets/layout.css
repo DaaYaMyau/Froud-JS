@@ -1,0 +1,71 @@
+/* .body {
+    width: 100vw;
+} */
+
+.logo {
+    height: clamp(3rem, 2.107rem + 3.45vw, 6.25rem);
+    width: clamp(3rem, 2.107rem + 3.45vw, 6.25rem);
+    position: absolute;
+    top: 1vw;
+    left: 1.15vw;
+}
+
+.firstscreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+P {
+    color: #0075F2;
+    font-family: "Montserrat";
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.header {
+    font-size: clamp(2rem, 1.433rem + 2.19vw, 4.063rem);
+    margin-top: 1.8vw;
+}
+
+.textblock {
+    font-size: clamp(1.25rem, 0.906rem + 1.33vw, 2.5rem);
+    margin-top: 3vw;
+}
+
+.firstlinetext, .secondlinetext {
+    margin-bottom: 2vw;
+}
+
+.thirdlinetext {
+    margin-bottom: 1vw;
+}
+
+.cow {
+    background-image: url(../img/cowfirst.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: clamp(23.688rem, 20.183rem + 13.55vw, 36.438rem);
+    height: clamp(17.375rem, 14.729rem + 10.23vw, 27rem);
+    margin-bottom: 0.5vw;
+    /* cursor: pointer; */
+}
+
+.cow:hover {
+    background-image: url(../img/cowecond.svg);
+    animation: cow 0.3s steps(2) infinite;
+}
+
+@keyframes cow {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg)}
+}
+
+.undercow {
+    font-size: clamp(1rem, 0.863rem + 0.53vw, 1.5rem);
+}
+
+.secondscreen {
+    display: none;
+}
