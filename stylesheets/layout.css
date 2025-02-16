@@ -1,13 +1,17 @@
-/* .body {
-    width: 100vw;
-} */
+.body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+}
 
 .logo {
-    height: clamp(3rem, 2.107rem + 3.45vw, 6.25rem);
-    width: clamp(3rem, 2.107rem + 3.45vw, 6.25rem);
+    height: clamp(2.5rem, 1.864rem + 2.46vw, 4.813rem);
+    width: clamp(2.5rem, 1.864rem + 2.46vw, 4.813rem);
     position: absolute;
-    top: 1vw;
-    left: 1.15vw;
+    top: 0.5vw;
+    left: 0.7vw;
+    z-index: 1;
 }
 
 .firstscreen {
@@ -25,12 +29,12 @@ P {
 
 .header {
     font-size: clamp(2rem, 1.433rem + 2.19vw, 4.063rem);
-    margin-top: 1.8vw;
+    margin-top: 1.4vw;
 }
 
 .textblock {
     font-size: clamp(1.25rem, 0.906rem + 1.33vw, 2.5rem);
-    margin-top: 3vw;
+    margin-top: 2.7vw;
 }
 
 .firstlinetext, .secondlinetext {
@@ -67,5 +71,91 @@ P {
 }
 
 .secondscreen {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: url(../img/background.png) no-repeat;
+    background-size: auto;
+    background-position: center;
+    position: relative;
+    z-index: 0;
+    /* cursor: grab; */
+}
+
+/* .interactive-object {
+    top: 100px; left: 200px;
+}
+
+.draggable-background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: grab;
+} */
+
+
+.applemain {
+    width: 20.4vw;
+    height: 25.8vw;
+    position: absolute;
+    left: 15vw;
+    top: 15vw;
+    transform: translate(-50%, -50%); 
+    background: url(../img/applemain.svg) no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.applemain:hover {
+    background: url(../img/AppleBlueMain.svg) no-repeat;
+        background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.milk {
+    width: 12vw;
+    height: 35vw;
+    position: absolute;
+    left: 30vw;
+    top: 105vw;
+    transform: translate(-50%, -50%); 
+    background: url(../img/milkmain.svg) no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.milk:hover {
+    background: url(../img/MilkBlueMain.svg) no-repeat;
+        background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.strawberry {
+    width: 20.4vw;
+    height: 20vw;
+    position: absolute;
+    left: 120vw;
+    top: 67vw;
+    transform: translate(-50%, -50%); 
+    background: url(../img/strawberrymain.svg) no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.strawberry:hover {
+    background: url(../img/StrawberryBlueMain.svg) no-repeat;
+        background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ThirdScreen_FirstStep {
     display: none;
 }
