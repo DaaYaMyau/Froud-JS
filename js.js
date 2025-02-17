@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const NotMainScreen = document.querySelectorAll('.NotMainScreen')
     const logo = document.querySelector('.logo');
 
+    window.addEventListener('load', function () {
+        var preloader = document.getElementById('preloader');
+        preloader.style.display = 'none';
+      });
+
     if (site === 'firstscreen') {
         firstscreen.style.display = 'flex';
     } else if (site === 'secondscreen') {
