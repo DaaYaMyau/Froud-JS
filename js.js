@@ -1,3 +1,8 @@
+window.addEventListener('load', function () {
+    var preloader = document.getElementById('preloader');
+    preloader.style.display = 'none';
+  });
+
 document.addEventListener("DOMContentLoaded", function () {
     const site = sessionStorage.getItem('CurrentSession') ? sessionStorage.getItem('CurrentSession') : 'firstscreen';
     const ToScreenTwo = document.querySelector('.cow');
@@ -6,11 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const ThirdScreen_FirstStep = document.querySelector('.ThirdScreen_FirstStep')
     const NotMainScreen = document.querySelectorAll('.NotMainScreen')
     const logo = document.querySelector('.logo');
-
-    window.addEventListener('load', function () {
-        var preloader = document.getElementById('preloader');
-        preloader.style.display = 'none';
-      });
 
     if (site === 'firstscreen') {
         firstscreen.style.display = 'flex';
