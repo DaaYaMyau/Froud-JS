@@ -1,7 +1,8 @@
-window.addEventListener('load', function () {
-    var preloader = document.getElementById('preloader');
-    preloader.style.display = 'none';
-  });
+// window.addEventListener('load', function () {
+//     var preloader = document.getElementById('preloader');
+//     preloader.style.display = 'none';
+//     console.log("preloader closed")
+//   });
 
 document.addEventListener("DOMContentLoaded", function () {
     const site = sessionStorage.getItem('CurrentSession') ? sessionStorage.getItem('CurrentSession') : 'firstscreen';
