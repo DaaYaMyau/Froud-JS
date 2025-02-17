@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const TextInModal = document.querySelector(".TextInModal");
     let gameStarted = false; 
 
+    modal.style.display = "none";
+    
+
     function getRandomRotation() {
         const rotations = [0, 90, 180, 270];
         return rotations[Math.floor(Math.random() * rotations.length)];
