@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const modal = document.querySelector(".modal");
     const TextInModal = document.querySelector(".TextInModal");
     let gameStarted = false; 
-
-    modal.style.display = "none";
     
 
     function getRandomRotation() {
