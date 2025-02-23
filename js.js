@@ -94,8 +94,8 @@ document.addEventListener("DOMContentLoaded", function () {
             secondBG.style.backgroundPosition = `${bgPosX}px ${bgPosY}px`;
 
             points.forEach(item => {
-                let pointsX = parseInt(item.dataset.originalX) + bgPosX;
-                let pointsY = parseInt(item.dataset.originalY) + bgPosY;
+                let pointsX = bgPosX;
+                let pointsY = bgPosY;
                 item.style.transform = `translate(${pointsX}px, ${pointsY}px)`;
             });
 
