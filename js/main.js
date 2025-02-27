@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const ThirdScreen_FirstStep = document.querySelector('.ThirdScreen_FirstStep')
     const NotMainScreen = document.querySelectorAll('.NotMainScreen')
     const logo = document.querySelector('.logo');
+    const Back_cow = document.querySelector('.back_cow')
+    const FromMilk = document.querySelector('.milk');
+    const First_FindGame = document.querySelector('.First_FindGame')
+    
+    const Button_FindGame_First = document.querySelector('.start')
+    const Modal_Find_First = document.querySelector('.Modal_Find_First')
 
     if (site === 'firstscreen') {
         firstscreen.style.display = 'flex';
@@ -19,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
         secondscreen.style.display = 'flex';
     } else if (site === 'ThirdScreen_FirstStep') {
         ThirdScreen_FirstStep.style.display = 'flex';
+    } else if (site === 'First_FindGame') {
+        First_FindGame.style.display = 'flex';
     }
 
     ToScreenTwo.addEventListener('click', function () {
@@ -45,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (window.getComputedStyle(secondscreen).display === 'flex') {
         let isDragging = false;
-        console.log("false")
         let startX, startY, bgPosX = 0, bgPosY = 0;
     
         const secondBG = document.querySelector(".secondscreen");
@@ -64,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         secondBG.addEventListener("mousedown", (e) => {
             isDragging = true;
-            console.log("true")
             startX = e.clientX;
             startY = e.clientY;
             secondBG.style.cursor = "grabbing";
@@ -151,16 +157,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    const Back_cow = document.querySelector('.back_cow')
     Back_cow.addEventListener('click', function () {
         if (window.getComputedStyle(ThirdScreen_Cow).display === 'flex') {
             ThirdScreen_Cow.style.display = 'none';
             ThirdScreen_FirstStep.style.display = 'flex';
         }
     });
-
-    const FromMilk = document.querySelector('.milk');
-    const First_FindGame = document.querySelector('.First_FindGame')
 
 
     FromMilk.addEventListener('click', function () {
@@ -171,4 +173,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    Button_FindGame_First.addEventListener('click', function () {
+        if (window.getComputedStyle(Modal_Find_First).display === 'flex') {
+            Modal_Find_First.style.display = 'none';
+        }
+    });
 });

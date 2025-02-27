@@ -44,6 +44,7 @@
     top: 0.5vw;
     left: 0.7vw;
     z-index: 1;
+    cursor: pointer;
 }
 
 .NotMainScreen {
@@ -254,7 +255,7 @@ P {
 }
 
 .pink_cow:hover {
-    animation: pink_cow 1s infinite ease-in-out;
+    animation: pink_cow 1s infinite linear;
 }
 
 @keyframes pink_cow {
@@ -559,9 +560,27 @@ P {
 
 
 .First_FindGame {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     display: none;
     flex-direction: column;
     align-items: center;
+    background: url(../img/BG.svg) no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Modal_Find_First {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    backdrop-filter: blur(3px);
 }
 
 .Main_Heading p{
@@ -591,11 +610,107 @@ button {
     height: 6.3vw;
     background-color: white;
     border: 5px solid #0075F2;
+    cursor: pointer;
 }
 
-.First_FindGame {
-    background: url(../img/BG.svg) no-repeat;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.fruits {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.fuit {
+    position: absolute;
+    
+}
+
+.PixelAppleGame {
+    width: 27vw;
+    height: 31.3vw;
+}
+
+.BananaGame {
+    width: 15vw;
+    height: 15.5vw;
+}
+
+.StrawberryGame {
+    width: 24.3vw;
+    height: 24.2vw;
+}
+
+.TomatoGame {
+    width: 15vw;
+    height: 15.5vw;
+}
+
+.garfild {
+    width: 18vw;
+    height: 22.1vw;
+}
+
+.CarrotGame {
+    width: 25.6vw;
+    height: 43.3vw;
+}
+
+.CroissantGame {
+    width: 20.1vw;
+    height: 25.8vw;
+}
+
+.PixelCroissantGame {
+    width: 22.4vw;
+    height: 28.9vw;
+}
+
+.AppleGame {
+    width: 24.3vw;
+    height: 24.3vw;
+}
+
+.PixelCarrotGame {
+    width: 26vw;
+    height: 43.8vw;
+}
+
+.SalatGame {
+    width: 29.3vw;
+    height: 31.6vw;
+}
+
+.PixelSalatGame {
+    width: 29.3vw;
+    height: 31.6vw;
+}
+
+.CornGame {
+    width: 30.2vw;
+    height: 44.3vw;
+}
+
+.CherryGame {
+    width: 23.8vw;
+    height: 28vw;
+}
+
+.BroccoliGame {
+    width: 24.2vw;
+    height: 24.2vw;
+}
+
+.CowGame {
+    width: 30.4vw;
+    height: 22.5vw;
+}
+
+.AntGame {
+    width: 12.8vw;
+    height: 10.6vw;
+}
+
+.MouseGame {
+    width: 20.2vw;
+    height: 29.2vw;
 }
