@@ -27,6 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
         ThirdScreen_FirstStep.style.display = 'flex';
     } else if (site === 'First_FindGame') {
         First_FindGame.style.display = 'flex';
+    } else if (site === 'ThreeD_First') {
+        ThreeD_First.style.display = 'flex';
+    } else if (site === 'ThreeD_Second') {
+        ThreeD_Second.style.display = 'flex';
     }
 
     ToScreenTwo.addEventListener('click', function () {
@@ -138,7 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-
     const CowMosaic = document.querySelector('.CowMosaic')
     const ThirdScreen_Cow = document.querySelector('.ThirdScreen_Cow')
 
@@ -164,7 +167,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-
     FromMilk.addEventListener('click', function () {
         if (window.getComputedStyle(First_FindGame).display === 'none') {
             secondscreen.style.display = 'none';
@@ -178,4 +180,49 @@ document.addEventListener("DOMContentLoaded", function () {
             Modal_Find_First.style.display = 'none';
         }
     });
+
+    const strawberry = document.querySelector('.strawberry')
+    const ThreeD_First = document.querySelector('.ThreeD_First')
+    strawberry.addEventListener('click', function () {
+        if (window.getComputedStyle(ThreeD_First).display === 'none') {
+            secondscreen.style.display = 'none';
+            ThreeD_First.style.display = 'flex';
+            sessionStorage.setItem('CurrentSession', 'ThreeD_First')
+        }
+    });
+
+        const BottleProduct = document.querySelector('.BottleProduct')
+        const ThreeD_Bottle = document.querySelector('.ThreeD_Bottle')
+        BottleProduct.addEventListener('click', function () {
+            if (window.getComputedStyle(ThreeD_Bottle).display === 'none') {
+                ThreeD_First.style.display = 'none';
+                ThreeD_Bottle.style.display = 'flex';
+                sessionStorage.setItem('CurrentSession', 'ThreeD_Bottle')
+            }
+    });
+
+    // const ProductsFirst = document.querySelector('.ProductsFirst');
+    // const ProductsFirstConteiner = document.querySelector('.ProductsFirstConteiner');
+
+    // let clone = ProductsFirst.cloneNode(true);
+    // ProductsFirstConteiner.appendChild(clone);
+
+    // let speed = 10;  // Скорость движения
+    // let position = 0; // Начинаем с правого края
+
+    // function moveMarquee() {
+    //     position -= speed;
+        
+    //     // Если весь оригинальный блок скрылся, сбрасываем позицию
+    //     if (position <= -ProductsFirst.offsetWidth) {
+    //         position = 0;
+    //     }
+
+    //     ProductsFirst.style.transform = `translateX(${position}px)`;
+    //     clone.style.transform = `translateX(${position}px)`;
+
+    //     requestAnimationFrame(moveMarquee);
+    // }
+
+    // moveMarquee();
 });
