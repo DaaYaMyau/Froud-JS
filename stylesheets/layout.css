@@ -742,7 +742,7 @@ hr {
     display: flex;
     flex-direction: row;
     margin-bottom: -4vw;
-    animation: ProductsFirst 5s linear infinite;
+    animation: ProductsFirst 9s linear infinite;
 }
 
 @keyframes ProductsFirst {
@@ -755,7 +755,7 @@ hr {
     display: flex;
     flex-direction: row;
     margin-bottom: -2vw;
-    animation: ProductsSecond 5s linear infinite;
+    animation: ProductsSecond 9s linear infinite;
 }
 
 @keyframes ProductsSecond {
@@ -767,7 +767,7 @@ hr {
     width: 4.4vw;
     height: 12.5vw;
     rotate: 20deg;
-    margin-right: 5vw;
+    margin-right: 25vw;
     transform: translateY(0);
 }
 
@@ -862,4 +862,60 @@ hr {
     rotate: -45deg;
     margin-right: 25vw;
     transform: translateY(0);
+}
+
+.BottleProduct:hover{
+    cursor: pointer;
+}
+
+.BroccoliProduct:hover{
+    cursor: pointer;
+}
+
+.TomatoProduct:hover{
+    cursor: pointer;
+}
+
+.AppleProduct:hover{
+    cursor: pointer;
+}
+
+.GarlicProduct:hover{
+    cursor: pointer;
+}
+
+.LimonProduct:hover{
+    cursor: pointer;
+}
+
+.CroissantProduct:hover{
+    cursor: pointer;
+}
+
+.CabbageProduct:hover{
+    cursor: pointer;
+}
+
+.PineappleProdu:hover{
+    cursor: pointer;
+}
+
+.PumpkinProduct:hover{
+    cursor: pointer;
+}
+
+.StrawberryProduct:hover{
+    cursor: pointer;
+}
+
+.OrangeProduct:hover{
+    cursor: pointer;
+}
+
+.BananaProduct:hover{
+    cursor: pointer;
+}
+
+.ThreeD_Bottle {
+    display: none;
 }
