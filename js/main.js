@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const Back_cow = document.querySelector('.back_cow')
     const FromMilk = document.querySelector('.milk');
     const First_FindGame = document.querySelector('.First_FindGame')
+    const ThreeD_Bottle = document.querySelector('.ThreeD_Bottle')
+
     
     const Button_FindGame_First = document.querySelector('.start')
     const Modal_Find_First = document.querySelector('.Modal_Find_First')
@@ -29,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
         First_FindGame.style.display = 'flex';
     } else if (site === 'ThreeD_First') {
         ThreeD_First.style.display = 'flex';
-    } else if (site === 'ThreeD_Second') {
-        ThreeD_Second.style.display = 'flex';
+    } else if (site === 'ThreeD_Bottle') {
+        ThreeD_Bottle.style.display = 'block';
     }
 
     ToScreenTwo.addEventListener('click', function () {
@@ -192,7 +194,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
         const BottleProduct = document.querySelector('.BottleProduct')
-        const ThreeD_Bottle = document.querySelector('.ThreeD_Bottle')
         BottleProduct.addEventListener('click', function () {
             if (window.getComputedStyle(ThreeD_Bottle).display === 'none') {
                 ThreeD_First.style.display = 'none';
