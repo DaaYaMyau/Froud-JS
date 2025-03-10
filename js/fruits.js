@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const fruits = document.querySelectorAll(".fruit");
 
     fruits.forEach(fruit => {
-        console.log(fruit)
         let maxX = window.innerWidth - fruit.clientWidth;
         let maxY = window.innerHeight - fruit.clientHeight;
         

@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
         BottleProduct.addEventListener('click', function () {
             if (window.getComputedStyle(ThreeD_Bottle).display === 'none') {
                 ThreeD_First.style.display = 'none';
-                ThreeD_Bottle.style.display = 'flex';
+                ThreeD_Bottle.style.display = 'block';
                 sessionStorage.setItem('CurrentSession', 'ThreeD_Bottle')
             }
     });

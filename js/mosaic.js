@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (gameStarted && checkWinCondition()) {
                     setTimeout(() => {
                         modal.style.display = "flex";
-                        console.log("modal");
                     }, 10);
                 }
             });
