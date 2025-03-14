@@ -336,23 +336,25 @@ P {
 
 .back {
     display: flex;
+    z-index: 2;
     align-items: center;
     position: absolute;
     bottom: 1.3vw;
     left: 1.15vw;
+    cursor: pointer;
 }
 
-.back_cow {
+/* .back_cow {
     display: flex;
     align-items: center;
     position: absolute;
     bottom: 1.3vw;
     left: 1.15vw;
-}
+} */
 
-.back_cow p {
+/* .back_cow p {
     margin-top: 0.5vw;
-}
+} */
 
 .arrow {
     width: 1.6vw;
@@ -579,7 +581,29 @@ P {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
+    backdrop-filter: blur(3px);
+}
+
+.Modal_Find_Cow {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    backdrop-filter: blur(3px);
+}
+
+.Modal_Find_Garfild {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
     backdrop-filter: blur(3px);
 }
 
@@ -613,16 +637,25 @@ button {
     cursor: pointer;
 }
 
+.count {
+    font-size: clamp(2rem, 1.45rem + 2.12vw, 4rem);
+    margin-bottom: 0.7vw;
+}
+
 .fruits {
     position: relative;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    /* display: block; */
 }
 
-.fuit {
+.fruit {
     position: absolute;
-    
+    left: 0;
+    top: 0;
+    transform: rotate(0);
+    /* z-index: 0; */
 }
 
 .PixelAppleGame {
@@ -746,7 +779,7 @@ hr {
 }
 
 @keyframes ProductsFirst {
-    from {transform: translateX(-100%)}
+    from {transform: translateX(-170%)}
     to {transform: translateX(100%);}
 }
 
@@ -760,7 +793,7 @@ hr {
 
 @keyframes ProductsSecond {
     from {transform: translateX(100%);}
-    to {transform: translateX(-100%);}
+    to {transform: translateX(-130%);}
 }
 
 .BottleProduct img{
@@ -928,3 +961,198 @@ hr {
     /* везде сделать!!! */
 }
 
+.ThreeD_Broccoli {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+}
+
+.ThreeD_Broccoli:active {
+    cursor: grabbing; 
+}
+
+.ThreeD_Apple {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+}
+
+.ThreeD_Apple:active {
+    cursor: grabbing; 
+}
+
+.ThreeD_Garlic {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+}
+
+.ThreeD_Garlic:active {
+    cursor: grabbing; 
+}
+
+.ThreeD_Limon {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+}
+
+.ThreeD_Limon:active {
+    cursor: grabbing; 
+}
+
+.ThreeD_Croissant {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+    background-color: #0075F2;
+}
+
+.ThreeD_Croissant:active {
+    cursor: grabbing; 
+}
+
+.ThreeD_Cabbage {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+}
+
+.ThreeD_Cabbage:active {
+    cursor: grabbing; 
+}
+
+.ThreeD_Pineapple {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+}
+
+.ThreeD_Pineapple:active {
+    cursor: grabbing; 
+} 
+
+.ThreeD_Pumpkin {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+}
+
+.ThreeD_Pumpkin:active {
+    cursor: grabbing; 
+}
+
+.ThreeD_Strawberry {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+}
+
+.ThreeD_Strawberry:active {
+    cursor: grabbing; 
+}
+
+.ThreeD_Orange {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+}
+
+.ThreeD_Orange:active {
+    cursor: grabbing; 
+}
+
+.ThreeD_Banana {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+    background-color: #0075F2;
+}
+
+.ThreeD_Banana:active {
+    cursor: grabbing; 
+}
+
+.ThreeD_Tomato {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0075F2;
+}
+
+.BG_Three {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.7;
+    background: url(../img/BG_Three.svg) lightgray 50% / cover no-repeat;
+    mix-blend-mode: multiply;
+    width: 100vw;
+    height: 100vh;
+}
+
+.content {
+    width: 100%;
+    /* height: 100%; */
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vw;
+}
+
+.content p {
+    font-size: clamp(2rem, 1.45rem + 2.12vw, 4rem);
+    color: white;
+
+}
+
+.fruit_error_tomato img {
+    width: 28.6vw;
+    height: 29.4vw;
+}
+
+.back_Tomato {
+    filter: invert(1);
+}
+
+.logo_tomato {
+    filter: invert(1);
+}
+
+.back_Croissant {
+    filter: invert(1);
+}
+
+.logo_Croissant {
+    filter: invert(1);
+}
+
+.fruit_error_Croissant img {
+    width: 28.6vw;
+    height: 29.4vw;
+}
+
+.back_Banana {
+    filter: invert(1);
+}
+
+.logo_Banana {
+    filter: invert(1);
+}
+
+.fruit_error_Banana img {
+    width: 28.6vw;
+    height: 29.4vw;
+}
