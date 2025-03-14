@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ThreeD_Strawberry = document.querySelector('.ThreeD_Strawberry')
     const ThreeD_Orange = document.querySelector('.ThreeD_Orange')
     const ThreeD_Banana = document.querySelector('.ThreeD_Banana')
+    const Second_FindGame = document.querySelector('.Second_FindGame');
 
     const Button_FindGame_First = document.querySelector('.start')
     const Modal_Find_First = document.querySelector('.Modal_Find_First')
@@ -69,6 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
         ThreeD_Orange.style.display = 'flex';
     } else if (site === 'ThreeD_Banana') {
         ThreeD_Banana.style.display = 'flex';
+    } else if (site === 'Second_FindGame') {
+        Second_FindGame.style.display = 'flex';
     }
 
     
@@ -222,7 +225,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const strawberry = document.querySelector('.strawberry')
-
     strawberry.addEventListener('click', function () {
         if (window.getComputedStyle(ThreeD_First).display === 'none') {
             secondscreen.style.display = 'none';
@@ -451,10 +453,6 @@ document.addEventListener("DOMContentLoaded", function () {
             ThreeD_First.style.display = 'flex';
         }
     });
-
-
-
-
     // const ProductsFirst = document.querySelector('.ProductsFirst');
     // const ProductsFirstConteiner = document.querySelector('.ProductsFirstConteiner');
 

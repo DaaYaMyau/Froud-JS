@@ -53,6 +53,16 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     const fruits = document.querySelectorAll(".fruit");
+    const Modal_Find_Cow = document.querySelector('.Modal_Find_Cow')
+    const Button_Resume_Cow = document.querySelector('.Button_Resume_Cow')
+    const CowGame = document.querySelector('.CowGame')
+    const Modal_Find_Garfild = document.querySelector('.Modal_Find_Garfild')
+    const Button_Resume_Garfild = document.querySelector('.Button_Resume_Garfild')
+    const garfild = document.querySelector('.garfild')
+    const First_FindGame = document.querySelector('.First_FindGame');
+    const Second_FindGame = document.querySelector('.Second_FindGame');
+    const Modal_Find_Second = document.querySelector('.Modal_Find_Second')
+    const Button_Resume_Second = document.querySelector('.Button_Resume_Second')
 
     let isDragging = false;
     let currentFruit = null;
@@ -118,12 +128,30 @@ document.addEventListener("DOMContentLoaded", function () {
             count += 1;
             clickCount.textContent = count;
             pixel.style.display = 'none';
+
+            if (count === 7) {
+                fruits.forEach(fruit => {
+                    fruit.style.display = 'none';
+                });
+
+                    if (window.getComputedStyle(Second_FindGame).display === 'none') {
+                        First_FindGame.style.display = 'none';
+                        Second_FindGame.style.display = 'flex';
+                        sessionStorage.setItem('CurrentSession', 'Second_FindGame')
+                        fruits.forEach(fruit => {
+                            fruit.style.display = 'absolute';
+                        });
+                    }
+            }
         });
     });
 
-    const Modal_Find_Cow = document.querySelector('.Modal_Find_Cow')
-    const Button_Resume_Cow = document.querySelector('.Button_Resume_Cow')
-    const CowGame = document.querySelector('.CowGame')
+    Button_Resume_Second.addEventListener('click', function () {
+        if (window.getComputedStyle(Modal_Find_Second).display === 'flex') {
+            Modal_Find_Second.style.display = 'none';
+        }
+    });
+
     CowGame.addEventListener("click", (e) => {
         Modal_Find_Cow.style.display = 'flex';
         CowGame.style.display = 'none';
@@ -135,10 +163,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-
-    const Modal_Find_Garfild = document.querySelector('.Modal_Find_Garfild')
-    const Button_Resume_Garfild = document.querySelector('.Button_Resume_Garfild')
-    const garfild = document.querySelector('.garfild')
     garfild.addEventListener("click", (e) => {
         Modal_Find_Garfild.style.display = 'flex';
         garfild.style.display = 'none';
@@ -148,13 +172,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (window.getComputedStyle(Modal_Find_Garfild).display === 'flex') {
             Modal_Find_Garfild.style.display = 'none';
         }
+    });
 
-        // fruits.forEach(fruit => {
-            if (count === 7) {
-                fruit.style.display = 'none';
-            }
-        // });
-    
+
     });
 
     // PixelAppleGame.addEventListener("click", (e) => {
@@ -168,7 +188,6 @@ document.addEventListener("DOMContentLoaded", function () {
     //     }
     // });
 
-});
 // let isDragging = false;
 // let startX, startY
 

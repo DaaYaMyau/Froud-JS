@@ -564,7 +564,6 @@ P {
 .First_FindGame {
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -572,6 +571,20 @@ P {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    overflow: hidden;
+}
+
+.Second_FindGame {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: url(../img/BG.svg) no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
 }
 
 .Modal_Find_First {
@@ -600,6 +613,17 @@ P {
     width: 100vw;
     height: 100vh;
     display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    backdrop-filter: blur(3px);
+}
+
+.Modal_Find_Second {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
@@ -659,8 +683,8 @@ button {
 }
 
 .PixelAppleGame {
-    width: 27vw;
-    height: 31.3vw;
+    width: 13.5vw;
+    height: 15.8vw;
 }
 
 .BananaGame {
@@ -669,8 +693,8 @@ button {
 }
 
 .StrawberryGame {
-    width: 24.3vw;
-    height: 24.2vw;
+    width: 18.3vw;
+    height: 18.3vw;
 }
 
 .TomatoGame {
@@ -714,8 +738,8 @@ button {
 }
 
 .PixelSalatGame {
-    width: 29.3vw;
-    height: 31.6vw;
+    width: 14.8vw;
+    height: 15.9vw;
 }
 
 .CornGame {
