@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const Button_FindGame_First = document.querySelector('.start')
     const Modal_Find_First = document.querySelector('.Modal_Find_First')
 
+
+
     if (site === 'firstscreen') {
         firstscreen.style.display = 'flex';
     } else if (site === 'secondscreen') {
@@ -81,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
             firstscreen.style.display = 'none';
             secondscreen.style.display = 'flex';
             sessionStorage.setItem('CurrentSession', 'secondscreen')
+            DraggScreen()
         }
     });
 
@@ -91,78 +94,82 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             secondscreen.style.display = 'flex';
             sessionStorage.setItem('CurrentSession', 'secondscreen')
+            DraggScreen()
         } else {
             firstscreen.style.display = 'flex';
             secondscreen.style.display = 'none';
             sessionStorage.setItem('CurrentSession', 'firstscreen')
         }
     });
-
-    if (window.getComputedStyle(secondscreen).display === 'flex') {
-        let isDragging = false;
-        let startX, startY, bgPosX = 0, bgPosY = 0;
-
-        const secondBG = document.querySelector(".secondscreen");
-        const points = document.querySelectorAll(".points");
-
-        const imgWidth = 300;
-        const imgHeight = 900;
-
-        const viewWidth = 0;
-        const viewHeight = 0;
-
-        points.forEach(item => {
-            item.dataset.originalX = item.offsetLeft;
-            item.dataset.originalY = item.offsetTop;
-        });
-
-        secondBG.addEventListener("mousedown", (e) => {
-            isDragging = true;
-            startX = e.clientX;
-            startY = e.clientY;
-            secondBG.style.cursor = "grabbing";
-        });
-
-        document.addEventListener("mousemove", (e) => {
-            if (!isDragging) return;
-
-            let Xcoor = e.clientX - startX;
-            let Ycoor = e.clientY - startY;
-
-            let newBgPosX = bgPosX + Xcoor;
-            let newBgPosY = bgPosY + Ycoor;
-
-
-            const maxX = 0;
-            const minX = viewWidth - imgWidth;
-            if (newBgPosX > maxX) newBgPosX = maxX;
-            if (newBgPosX < minX) newBgPosX = minX;
-
-            const maxY = 0;
-            const minY = viewHeight - imgHeight;
-            if (newBgPosY > maxY) newBgPosY = maxY;
-            if (newBgPosY < minY) newBgPosY = minY;
-
-            bgPosX = newBgPosX;
-            bgPosY = newBgPosY;
-
-            secondBG.style.backgroundPosition = `${bgPosX}px ${bgPosY}px`;
-
+    
+    
+    function DraggScreen () {
+        if (window.getComputedStyle(secondscreen).display === 'flex') {
+            let isDragging = false;
+            let startX, startY, bgPosX = 0, bgPosY = 0;
+    
+            const secondBG = document.querySelector(".secondscreen");
+            const points = document.querySelectorAll(".points");
+    
+            const imgWidth = 300;
+            const imgHeight = 900;
+    
+            const viewWidth = 0;
+            const viewHeight = 0;
+    
             points.forEach(item => {
-                let pointsX = bgPosX;
-                let pointsY = bgPosY;
-                item.style.transform = `translate(${pointsX}px, ${pointsY}px)`;
+                item.dataset.originalX = item.offsetLeft;
+                item.dataset.originalY = item.offsetTop;
             });
-
-            startX = e.clientX;
-            startY = e.clientY;
-        });
-
-        document.addEventListener("mouseup", () => {
-            isDragging = false;
-            secondBG.style.cursor = "grab";
-        });
-    };
+    
+            secondBG.addEventListener("mousedown", (e) => {
+                isDragging = true;
+                startX = e.clientX;
+                startY = e.clientY;
+                secondBG.style.cursor = "grabbing";
+            });
+    
+            secondBG.addEventListener("mousemove", (e) => {
+                if (!isDragging) return;
+    
+                let Xcoor = e.clientX - startX;
+                let Ycoor = e.clientY - startY;
+    
+                let newBgPosX = bgPosX + Xcoor;
+                let newBgPosY = bgPosY + Ycoor;
+    
+    
+                const maxX = 0;
+                const minX = viewWidth - imgWidth;
+                if (newBgPosX > maxX) newBgPosX = maxX;
+                if (newBgPosX < minX) newBgPosX = minX;
+    
+                const maxY = 0;
+                const minY = viewHeight - imgHeight;
+                if (newBgPosY > maxY) newBgPosY = maxY;
+                if (newBgPosY < minY) newBgPosY = minY;
+    
+                bgPosX = newBgPosX;
+                bgPosY = newBgPosY;
+    
+                secondBG.style.backgroundPosition = `${bgPosX}px ${bgPosY}px`;
+    
+                points.forEach(item => {
+                    let pointsX = bgPosX;
+                    let pointsY = bgPosY;
+                    item.style.transform = `translate(${pointsX}px, ${pointsY}px)`;
+                });
+    
+                startX = e.clientX;
+                startY = e.clientY;
+            });
+    
+            secondBG.addEventListener("mouseup", () => {
+                isDragging = false;
+                secondBG.style.cursor = "grab";
+            });
+        };
+    }
 
     const FromApple = document.querySelector('.applemain');
 

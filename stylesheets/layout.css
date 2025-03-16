@@ -665,7 +665,10 @@ button {
 
 .count {
     font-size: clamp(2rem, 1.45rem + 2.12vw, 4rem);
-    margin-bottom: 0.7vw;
+    /* margin-bottom: 0.7vw; */
+    position: absolute;
+    bottom: 0.7vw;
+    z-index: 5;
 }
 
 .fruits {
@@ -676,7 +679,7 @@ button {
     /* display: block; */
 }
 
-.fruit {
+.fruit, .fruit2 {
     position: absolute;
     left: 0;
     top: 0;

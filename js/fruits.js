@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const Second_FindGame = document.querySelector('.Second_FindGame');
     const Modal_Find_Second = document.querySelector('.Modal_Find_Second')
     const Button_Resume_Second = document.querySelector('.Button_Resume_Second')
+    const fruit2 = document.querySelectorAll('.fruit2')
 
     let isDragging = false;
     let currentFruit = null;
@@ -72,41 +73,44 @@ document.addEventListener("DOMContentLoaded", function () {
     fruits.forEach(fruit => {
         let maxX = window.innerWidth - fruit.clientWidth;
         let maxY = window.innerHeight - fruit.clientHeight;
-
+    
         let randomX = Math.random() * maxX;
         let randomY = Math.random() * maxY;
         let randomRotation = Math.random() * 30 - 15;
-
+    
         fruit.style.position = "absolute";
         fruit.style.left = `${randomX}px`;
         fruit.style.top = `${randomY}px`;
         fruit.style.transform = `rotate(${randomRotation}deg)`;
         fruit.style.cursor = "grab";
-
-        fruit.addEventListener("mousedown", function (event) {
+    
+        fruit.addEventListener("dragstart", function (event) {
             isDragging = true;
             currentFruit = fruit;
             
-
+            // currentFruit.style.cursor = "grab";
             fruit.style.cursor = "grabbing";
             fruit.style.zIndex = 1; // Перемещаемый элемент поверх других
-
+    
             offsetX = event.clientX - fruit.getBoundingClientRect().left;
             offsetY = event.clientY - fruit.getBoundingClientRect().top;
-
-            document.addEventListener("mousemove", onMouseMove);
-            document.addEventListener("mouseup", onMouseUp);
+    
+            document.addEventListener("dragover", onMouseMove);
+            document.addEventListener("drop", onMouseUp);
         });
-    });
+    });    
+    
 
     function onMouseMove(event) {
-        if (!isDragging || !currentFruit) return;
+        // if (!isDragging || !currentFruit) return;
 
         let x = event.clientX - offsetX;
         let y = event.clientY - offsetY;
 
         currentFruit.style.left = `${x}px`;
         currentFruit.style.top = `${y}px`;
+
+        event.preventDefault();
     }
 
     function onMouseUp() {
@@ -116,8 +120,8 @@ document.addEventListener("DOMContentLoaded", function () {
         currentFruit.style.cursor = "grab";
         currentFruit = null;
 
-        document.removeEventListener("mousemove", onMouseMove);
-        document.removeEventListener("mouseup", onMouseUp);
+        document.removeEventListener("dragover", onMouseMove);
+        document.removeEventListener("drop", onMouseUp);
     }
 
 
@@ -138,13 +142,64 @@ document.addEventListener("DOMContentLoaded", function () {
                         First_FindGame.style.display = 'none';
                         Second_FindGame.style.display = 'flex';
                         sessionStorage.setItem('CurrentSession', 'Second_FindGame')
-                        fruits.forEach(fruit => {
-                            fruit.style.display = 'absolute';
+                        fruit2.forEach(fruit2 => {
+                            fruit2.style.display = 'absolute';
                         });
                     }
             }
         });
     });
+
+    fruit2.forEach(fruit => {
+        let maxX = window.innerWidth - fruit.clientWidth;
+        let maxY = window.innerHeight - fruit.clientHeight;
+    
+        let randomX = Math.random() * maxX;
+        let randomY = Math.random() * maxY;
+        let randomRotation = Math.random() * 30 - 15;
+    
+        fruit.style.position = "absolute";
+        fruit.style.left = `${randomX}px`;
+        fruit.style.top = `${randomY}px`;
+        fruit.style.transform = `rotate(${randomRotation}deg)`;
+        fruit.style.cursor = "grab";
+    
+        fruit.addEventListener("dragstart", function (event) {
+            isDragging = true;
+            currentFruit = fruit;
+            
+            fruit.style.cursor = "grabbing";
+            fruit.style.zIndex = 1; // Перемещаемый элемент поверх других
+    
+            offsetX = event.clientX - fruit.getBoundingClientRect().left;
+            offsetY = event.clientY - fruit.getBoundingClientRect().top;
+    
+            document.addEventListener("dragover", onMouseMove);
+            document.addEventListener("drop", onMouseUp);
+        });
+    });
+    
+
+    function onMouseMove(event) {
+        if (!isDragging || !currentFruit) return;
+
+        let x = event.clientX - offsetX;
+        let y = event.clientY - offsetY;
+
+        currentFruit.style.left = `${x}px`;
+        currentFruit.style.top = `${y}px`;
+    }
+
+    function onMouseUp() {
+        if (!currentFruit) return;
+
+        isDragging = false;
+        currentFruit.style.cursor = "grab";
+        currentFruit = null;
+
+        document.removeEventListener("dragover", onMouseMove);
+        document.removeEventListener("drop", onMouseUp);
+    }
 
     Button_Resume_Second.addEventListener('click', function () {
         if (window.getComputedStyle(Modal_Find_Second).display === 'flex') {

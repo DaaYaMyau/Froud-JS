@@ -42,6 +42,10 @@ function initThree(Class, modell, position) {
     directionalLight.position.set(1, 1, 1); 
     scene.add(directionalLight);
 
+    const directionalLight2 = new THREE.DirectionalLight(0xffffff, 2.5); 
+    directionalLight.position.set(-1, -1, -1); 
+    scene.add(directionalLight2);
+
     const loader = new GLTFLoader();
     let model = null;
     
