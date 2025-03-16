@@ -38,13 +38,16 @@
   } */
 
 .logo {
-    height: clamp(2.5rem, 1.864rem + 2.46vw, 4.813rem);
-    width: clamp(2.5rem, 1.864rem + 2.46vw, 4.813rem);
     position: absolute;
     top: 0.5vw;
     left: 0.7vw;
     z-index: 1;
     cursor: pointer;
+}
+
+.logo img {
+    height: 6vw;
+    width: 6vw;
 }
 
 .NotMainScreen {
@@ -65,12 +68,12 @@ P {
 }
 
 .header {
-    font-size: clamp(2rem, 1.433rem + 2.19vw, 4.063rem);
+    font-size: clamp(2rem, 1.538rem + 2.05vw, 4rem);
     margin-top: 1.4vw;
 }
 
 .textblock {
-    font-size: clamp(1.25rem, 0.975rem + 1.06vw, 2.25rem);
+    font-size: clamp(1.25rem, 0.962rem + 1.28vw, 2.5rem);
     margin-top: 1.7vw;
 }
 
@@ -88,9 +91,8 @@ P {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: clamp(23.688rem, 20.183rem + 13.55vw, 36.438rem);
-    height: clamp(17.375rem, 14.729rem + 10.23vw, 27rem); /* !!! vw */
-    /* margin-bottom: 0.5vw; */
+    width: 35vw;
+    height: 25vw;
     cursor: pointer;
 }
 
@@ -110,9 +112,9 @@ P {
 }
 
 .underwrite {
-    font-size: clamp(1rem, 0.863rem + 0.53vw, 1.5rem);
-    position: absolute;
-    bottom: 1.3vw;
+    font-size: clamp(1rem, 0.885rem + 0.51vw, 1.5rem);
+    position: flex;
+    margin-top: 2vw;
 }
 
 .secondscreen {

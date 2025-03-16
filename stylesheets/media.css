@@ -1,0 +1,57 @@
+@media (max-width: 768px) {
+    .textblock {
+        margin-top: 2.3vw;
+    }
+
+    .firstlinetext,
+    .secondlinetext {
+        margin-bottom: 4vw;
+        width: 80vw;
+    }
+    
+    .thirdlinetext {
+        margin-bottom: 7vw;
+        width: 80vw;
+    }
+
+    .cow {
+        width: 55vw;
+        height: 45vw;
+        background-image: url(../img/cowsecond.svg);
+        animation: cow 0.3s steps(2) infinite;
+    }
+
+    .underwrite {
+        width: 80vw;
+        margin-top: 6vw;
+    }
+}
+
+@media (max-width: 415px) {
+    .header {
+        margin-top: 12vw;
+    }
+
+    .textblock {
+        margin-top: 7vw;
+    }
+
+    .firstlinetext,
+    .secondlinetext {
+        margin-bottom: 5vw;
+    }
+    
+    .thirdlinetext {
+        margin-bottom: 10vw;
+    }
+
+    .cow {
+        width: 65vw;
+        height: 55vw;
+    }
+
+    .logo img {
+        height: 10vw;
+        width: 10vw;
+    }
+}
