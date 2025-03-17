@@ -155,10 +155,7 @@ P {
     height: 35vw;
     position: absolute;
     left: 40vw;    
-    /* left: 30vw; */
     top: 70vw;
-    /* top: 85vw; */
-    /* transform: translate(-50%, -50%); */
     background: url(../img/milkmain.svg) no-repeat;
     background-size: contain;
     background-repeat: no-repeat;
@@ -298,6 +295,8 @@ P {
     display: none;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
+    justify-content: space-around;
 }
 
 .variants {
@@ -359,14 +358,19 @@ P {
 } */
 
 .arrow {
-    width: 1.6vw;
-    height: 2.23vw;
-    margin-right: 1vw;
+    /* width: 1.6vw;
+    height: 2.23vw; */
+    margin-right: 0.4vw;
 }
 
-.back p {
-    margin-top: 0.5vw;
+.arrow img{
+    width: 2vw;
+    height: 2.8vw;
 }
+
+/* .back p {
+    margin-top: 0.5vw;
+} */
 
 .MosaicApple {
     display: grid;
@@ -550,14 +554,14 @@ P {
     width: 73vw;
     height: 14vw;
     background-color: #0075F2;
-    border: 5px solid white;
+    border: 0.4vw solid white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .TextInModal p {
-    font-size: 64px;
+    font-size: clamp(1.5rem, 0.923rem + 2.56vw, 4rem);
     color: white;
     text-align: center;
 }
@@ -634,7 +638,7 @@ P {
 }
 
 .Main_Heading p{
-    font-size: clamp(2rem, 1.45rem + 2.12vw, 4rem);
+    font-size: clamp(1.5rem, 0.923rem + 2.56vw, 4rem);
     color: white;
 }
 
@@ -643,15 +647,15 @@ P {
     align-items: center;
     justify-content: center;
     background-color: #0075F2;
-    width: 73vw;
+    width: 78vw;
     height: 14vw;
-    border: 5px solid white;
+    border: 0.4vw solid white;
     margin-top: 12vw;
     margin-bottom: 2vw;
 }
 
 button {
-    font-size: clamp(2rem, 1.45rem + 2.12vw, 4rem);
+    font-size: clamp(1.5rem, 0.923rem + 2.56vw, 4rem);
     color: #0075F2;
     font-family: "Montserrat";
     text-transform: uppercase;
@@ -659,12 +663,12 @@ button {
     width: 32vw;
     height: 6.3vw;
     background-color: white;
-    border: 5px solid #0075F2;
+    border: 0.4vw solid #0075F2;
     cursor: pointer;
 }
 
 .count {
-    font-size: clamp(2rem, 1.45rem + 2.12vw, 4rem);
+    font-size: clamp(1.5rem, 0.923rem + 2.56vw, 4rem);
     /* margin-bottom: 0.7vw; */
     position: absolute;
     bottom: 0.7vw;
@@ -1038,13 +1042,13 @@ hr {
     display: none;
     width: 100vw;
     height: 100vh;
-    cursor: grab;
+    /* cursor: grab; */
     background-color: #0075F2;
 }
 
-.ThreeD_Croissant:active {
+/* .ThreeD_Croissant:active {
     cursor: grabbing; 
-}
+} */
 
 .ThreeD_Cabbage {
     display: none;
@@ -1105,13 +1109,13 @@ hr {
     display: none;
     width: 100vw;
     height: 100vh;
-    cursor: grab;
+    /* cursor: grab; */
     background-color: #0075F2;
 }
 
-.ThreeD_Banana:active {
+/* .ThreeD_Banana:active {
     cursor: grabbing; 
-}
+} */
 
 .ThreeD_Tomato {
     display: none;
