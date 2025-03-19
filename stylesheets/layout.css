@@ -1148,7 +1148,10 @@ hr {
 .content p {
     font-size: clamp(2rem, 1.45rem + 2.12vw, 4rem);
     color: white;
+}
 
+.First_Error p {
+    font-size: clamp(2.375rem, 1.654rem + 3.21vw, 5.5rem);
 }
 
 .fruit_error_tomato img {
@@ -1188,4 +1191,19 @@ hr {
 .fruit_error_Banana img {
     width: 28.6vw;
     height: 29.4vw;
+}
+
+.info_block {
+    position: absolute;
+    top: 0.5vw;
+    right: 0.7vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* font-size: clamp(1.25rem, 0.962rem + 1.28vw, 2.5rem); */
+    /* margin-left: 70vw; */
+}
+
+.info_1, .info_2 {
+    margin-bottom: 0.3vw;
 }
