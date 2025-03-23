@@ -128,7 +128,6 @@
 
     .AppleMosaic_1 img {
         width: 17.3vw;
-        /* height: 10vw; */
     }
 
     .OnePart img {
@@ -196,6 +195,10 @@
     .Button_Resume_Second {
         width: 57vw;
         height: 10.3vw;
+    }
+
+    .FirstLevel {
+        margin-top: 20vw;
     }
 }
 
@@ -296,7 +299,6 @@
 
     .AppleMosaic {
         margin-bottom: 4vw;
-        /* margin-left: 2vw; */
         width: 42.3vw;
         height: 48vw;
         margin-right: 0vw;
@@ -324,7 +326,6 @@
 
     .AppleMosaic_1 img {
         width: 26.3vw;
-        /* height: 10vw; */
     }
 
     .OnePart img {
@@ -366,6 +367,14 @@
     .Button_Resume_Garfild {
         width: 52vw;
         height: 10.3vw;
+    }
+
+    .FirstLevel {
+        margin-top: 40vw;
+    }
+
+    .SecondLevel {
+        margin-top: 20vw;
     }
 }
 

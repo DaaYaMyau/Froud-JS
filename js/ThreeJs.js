@@ -1,10 +1,9 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-// import { RectAreaLightUniformsLib } from 'RectAreaLightUniformsLib'
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    //if _screen flex 
         initThree('.ThreeD_Bottle', '3D/bottle.glb', [0, 0.3, 0.3]);
         initThree('.ThreeD_Broccoli', '3D/broccoli.glb', [0, 0, 0.7]);
         initThree('.ThreeD_Apple', '3D/delicious_red_apple.glb', [3, 10, 5]);
@@ -25,7 +24,7 @@ function initThree(Class, modell, position) {
     scene.background = new THREE.Color('#FFFFFF'); 
 
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    // camera.position.z = ;
+
     camera.position.set(...position);
    
     const renderer = new THREE.WebGLRenderer();

@@ -1,9 +1,3 @@
-// window.addEventListener('load', function () {
-//     var preloader = document.getElementById('preloader');
-//     preloader.style.display = 'none';
-//     console.log("preloader closed")
-//   });
-
 document.addEventListener("DOMContentLoaded", function () {
     const site = sessionStorage.getItem('CurrentSession') ? sessionStorage.getItem('CurrentSession') : 'firstscreen';
     const ToScreenTwo = document.querySelector('.cow');
@@ -33,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const Button_FindGame_First = document.querySelector('.start')
     const Modal_Find_First = document.querySelector('.Modal_Find_First')
-
+    const modal = document.querySelector(".modal");
 
 
     if (site === 'firstscreen') {
@@ -103,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     
     
-    function DraggScreen () {
+    function DraggScreen() {
         if (window.getComputedStyle(secondscreen).display === 'flex') {
             let isDragging = false;
             let startX, startY, bgPosX = 0, bgPosY = 0;
@@ -122,22 +116,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 item.dataset.originalY = item.offsetTop;
             });
     
-            secondBG.addEventListener("mousedown", (e) => {
+
+            const startDrag = (clientX, clientY) => {
                 isDragging = true;
-                startX = e.clientX;
-                startY = e.clientY;
+                startX = clientX;
+                startY = clientY;
                 secondBG.style.cursor = "grabbing";
-            });
+            };
     
-            secondBG.addEventListener("mousemove", (e) => {
+
+            const moveDrag = (clientX, clientY) => {
                 if (!isDragging) return;
     
-                let Xcoor = e.clientX - startX;
-                let Ycoor = e.clientY - startY;
+                let Xcoor = clientX - startX;
+                let Ycoor = clientY - startY;
     
                 let newBgPosX = bgPosX + Xcoor;
                 let newBgPosY = bgPosY + Ycoor;
-    
     
                 const maxX = 0;
                 const minX = viewWidth - imgWidth;
@@ -160,15 +155,38 @@ document.addEventListener("DOMContentLoaded", function () {
                     item.style.transform = `translate(${pointsX}px, ${pointsY}px)`;
                 });
     
-                startX = e.clientX;
-                startY = e.clientY;
-            });
+                startX = clientX;
+                startY = clientY;
+            };
     
-            secondBG.addEventListener("mouseup", () => {
+
+            const endDrag = () => {
                 isDragging = false;
                 secondBG.style.cursor = "grab";
+            };
+
+            secondBG.addEventListener("mousedown", (e) => {
+                startDrag(e.clientX, e.clientY);
             });
-        };
+    
+            secondBG.addEventListener("mousemove", (e) => {
+                moveDrag(e.clientX, e.clientY);
+            });
+    
+            secondBG.addEventListener("mouseup", endDrag);
+    
+            secondBG.addEventListener("touchstart", (e) => {
+                const touch = e.touches[0];
+                startDrag(touch.clientX, touch.clientY);
+            });
+    
+            secondBG.addEventListener("touchmove", (e) => {
+                const touch = e.touches[0];
+                moveDrag(touch.clientX, touch.clientY);
+            });
+    
+            secondBG.addEventListener("touchend", endDrag);
+        }
     }
 
     const FromApple = document.querySelector('.applemain');
@@ -208,12 +226,18 @@ document.addEventListener("DOMContentLoaded", function () {
             ThirdScreen_Apple.style.display = 'none';
             ThirdScreen_FirstStep.style.display = 'flex';
         }
+        if (window.getComputedStyle(modal).display === 'flex') {
+            modal.style.display = 'none';
+        }
     });
 
     Back_cow.addEventListener('click', function () {
         if (window.getComputedStyle(ThirdScreen_Cow).display === 'flex') {
             ThirdScreen_Cow.style.display = 'none';
             ThirdScreen_FirstStep.style.display = 'flex';
+        }
+        if (window.getComputedStyle(modal).display === 'flex') {
+            modal.style.display = 'none';
         }
     });
 
@@ -460,28 +484,5 @@ document.addEventListener("DOMContentLoaded", function () {
             ThreeD_First.style.display = 'flex';
         }
     });
-    // const ProductsFirst = document.querySelector('.ProductsFirst');
-    // const ProductsFirstConteiner = document.querySelector('.ProductsFirstConteiner');
-
-    // let clone = ProductsFirst.cloneNode(true);
-    // ProductsFirstConteiner.appendChild(clone);
-
-    // let speed = 10;  // Скорость движения
-    // let position = 0; // Начинаем с правого края
-
-    // function moveMarquee() {
-    //     position -= speed;
-
-    //     // Если весь оригинальный блок скрылся, сбрасываем позицию
-    //     if (position <= -ProductsFirst.offsetWidth) {
-    //         position = 0;
-    //     }
-
-    //     ProductsFirst.style.transform = `translateX(${position}px)`;
-    //     clone.style.transform = `translateX(${position}px)`;
-
-    //     requestAnimationFrame(moveMarquee);
-    // }
-
-    // moveMarquee();
+   
 });

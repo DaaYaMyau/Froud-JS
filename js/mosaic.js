@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let Part = null; // Глобальная переменная
+    let Part = null;
     const modal = document.querySelector(".modal");
     const TextInModal = document.querySelector(".TextInModal");
     let gameStarted = false;
@@ -15,16 +15,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function setupGame() {
-        if (!Part) return; // Если Part не определён, выходим из функции
+        if (!Part) return; 
 
-        // Инициализируем мозаичные части с начальной случайной ориентацией
+       
         Part.forEach(item => {
             if (!item.dataset.rotation) {
                 const randomRotation = getRandomRotation();
                 item.dataset.rotation = randomRotation;
             }
 
-            // Убираем старые классы вращения и добавляем новый
+
             item.classList.remove('rotate-90', 'rotate-180', 'rotate-270');
             const rotation = parseInt(item.dataset.rotation);
             if (rotation === 90) item.classList.add('rotate-90');
@@ -32,12 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
             if (rotation === 270) item.classList.add('rotate-270');
         });
 
-        // Функция для проверки, собрана ли мозаика
+
         function checkWinCondition() {
             return Array.from(Part).every(item => parseInt(item.dataset.rotation) === 0);
         }
 
-        // Добавляем обработчики на клики
         Part.forEach((item) => {
             item.addEventListener('click', function () {
                 gameStarted = true;
@@ -45,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentRotation = (currentRotation + 90) % 360;
                 item.dataset.rotation = currentRotation;
 
-                // Обновляем классы вращения
                 item.classList.remove('rotate-90', 'rotate-180', 'rotate-270');
                 if (currentRotation === 90) {
                     item.classList.add('rotate-90');
@@ -55,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     item.classList.add('rotate-270');
                 }
 
-                // Если игра началась и условие победы выполнено
                 if (gameStarted && checkWinCondition()) {
                     setTimeout(() => {
                         modal.style.display = "flex";
@@ -65,23 +62,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // При клике на AppleMosaic загружаем части для яблок и запускаем игру
     AppleMosaic.addEventListener('click', function () {
         if (window.getComputedStyle(ThirdScreen_Apple).display === 'flex') {
-            Part = document.querySelectorAll('.Part_Apple'); // Загружаем части яблочной мозаики
-            setupGame(); // Настроить игру для яблочной мозаики
+            Part = document.querySelectorAll('.Part_Apple');
+            setupGame(); 
         }
     });
 
-    // При клике на CowMosaic загружаем части для коровы и запускаем игру
+
     CowMosaic.addEventListener('click', function () {
         if (window.getComputedStyle(ThirdScreen_Cow).display === 'flex') {
-            Part = document.querySelectorAll('.Part_Cow'); // Загружаем части коровьей мозаики
-            setupGame(); // Настроить игру для коровьей мозаики
+            Part = document.querySelectorAll('.Part_Cow'); 
+            setupGame(); 
         }
     });
 
-    // Закрываем модальное окно при клике на него
     window.addEventListener("click", (event) => {
         if ((event.target === modal) || (event.target === TextInModal)) {
             modal.style.display = "none";
